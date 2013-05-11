@@ -48,8 +48,7 @@
     map <F2> :NERDTreeToggle<CR>
 
     " Quickly get out of insert mode without your fingers having to leave the
-    " home row (either use 'jj' or 'jk')
-    inoremap jj <Esc> 
+    " home row
     inoremap jk <Esc> 
     inoremap kj <Esc> 
 
