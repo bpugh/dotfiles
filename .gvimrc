@@ -1,11 +1,8 @@
 "   This is the personal .vimrc file of Brandon Pugh.
-"Shortcut for editing  vimrc file in a new tab  
-nmap <leader>ev :tabedit $MYVIMRC<cr> 
 
 " Editor display {
     set guioptions-=T  "remove toolbar
     "Show lines numbers  
-    set number
 
     set backspace=indent,eol,start  " allow backspacing over everything in insert mode
     "Enable code folding  
@@ -22,5 +19,8 @@ nmap <leader>ev :tabedit $MYVIMRC<cr>
 
     syntax enable
     set background=dark
+
+    " Display extra whitespace
+    set list listchars=tab:»·,trail:·
 " }
 
