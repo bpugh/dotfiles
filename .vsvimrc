@@ -19,7 +19,7 @@
 
     ":command b vsc Build.BuildSolution
     ":command w wq
-	nnoremap / /\v
+    nnoremap / /\v
     vnoremap / /\v
     set ignorecase
     set smartcase

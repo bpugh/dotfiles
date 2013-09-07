@@ -14,29 +14,46 @@
     " Vundle
         source ~/vundle.vim
 " }
+    syntax enable
 " key mappings {
 
     let mapleader = ","
 
-    "Saves time; maps the spacebar to colon  
+    "Saves time; maps the spacebar to colon
     nmap <space> :
 
-    nnoremap Y y$ "make Y behave like other commands
-    nnoremap s "0p "fast paste from yank register
+    "Shortcut for editing  vimrc file in a new tab
+    nmap <leader>ev :tabedit $MYVIMRC<cr>
+
+    "make Y behave like other commands
+    nnoremap Y y$
+    "fast paste from yank register
+    nnoremap s "0p
 
     "navigate by row
     nnoremap j gj
     nnoremap k gk
 
+    "paste default buffer on newline and autoindent
+    nnoremap <leader>v o<C-R>"<ESC>
+
+    "remove trailing whitespace
+    nnoremap <Leader>w :%s/\s\+$//e<CR>
+
     " navigate tabs like most editors
-    " just another reason to love 
+    " just another reason to love
     nnoremap <C-S-Tab> :tabprevious<CR>
     nnoremap <C-Tab> :tabnext<CR>
 
-    nnoremap <leader>s :wq<CR> "quick save and quit
+    "quick save and quit
+    nnoremap <leader>s :wq<CR>
+
     nnoremap <leader><space> :noh<cr>
     nnoremap <tab> %
     vnoremap <tab> %
+
+    " Switch between the last two files
+    nnoremap <leader><leader> <c-^>
 
     " NERDTree settings {{{
     " Put focus to the NERD Tree with F3 (tricked by quickly closing it and
@@ -44,15 +61,24 @@
     nnoremap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
     nnoremap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
     nnoremap <leader>N :NERDTreeClose<CR>
-    
+
+    " Quicker window movement
+    nnoremap <C-j> <C-w>j
+    nnoremap <C-k> <C-w>k
+    nnoremap <C-h> <C-w>h
+    nnoremap <C-l> <C-w>l
+
     map <F2> :NERDTreeToggle<CR>
 
     " Quickly get out of insert mode without your fingers having to leave the
-    " home row
-    inoremap jk <Esc> 
-    inoremap kj <Esc> 
+    " home row (either use 'jj' or 'jk')
+    inoremap jj <Esc>
 
 " }
+
+    " Open new split panes to right and bottom, which feels more natural
+    set splitbelow
+    set splitright
 
     nnoremap / /\v
     vnoremap / /\v
@@ -65,6 +91,8 @@
     set relativenumber
     set undofile
     set nomodeline                  " disable mode lines (security measure)
+
+    autocmd Filetype gitcommit setlocal spell "turn on spell ckecking for git commit msgs
 
 " Formatting {
 
@@ -83,9 +111,21 @@
 
 " }
 
-" Backups files
-    set backupdir=~/.vim/tmp/backup// " backups  
+    " Backups files
+    set backupdir=~/.vim/tmp/backup// " backups
     set directory=~/.vim/tmp/swap// " swap files
     set undodir=~/.vim/tmp/undo//
-    set backup " enable backup  
+    set backup " enable backup
+
+    " Set syntax highlighting for specific file types
+    autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+    " Enable spellchecking for Markdown
+    autocmd BufRead,BufNewFile *.md setlocal spell
+
+    " Automatically wrap at 80 characters for Markdown
+    autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+
+    " Display extra whitespace
+    set list listchars=tab:»·,trail:·
 
