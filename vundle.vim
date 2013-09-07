@@ -21,6 +21,9 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-markdown'
 Bundle 'mmalecki/vim-node.js'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'OrangeT/vim-csharp'
+Bundle 'groenewege/vim-less'
+Bundle 'digitaltoad/vim-jade'
 
 " Plugins
  " like grep but better. Currently used with Ag
@@ -45,7 +48,8 @@ Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-surround'
 "Bundle 'scrooloose/syntastic' " syntax error checking
  " displays a list of ctags in a viewport
-Bundle 'vim-scripts/taglist.vim'
+" Bundle 'vim-scripts/taglist.vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'vim-scripts/tComment'
 " Bundle 'tpope/vim-rake'
 Bundle 'mattn/zencoding-vim'
