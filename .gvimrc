@@ -3,6 +3,7 @@
 " Editor display {
     set guioptions-=T  "remove toolbar
     "Show lines numbers  
+    "set number
 
     set backspace=indent,eol,start  " allow backspacing over everything in insert mode
     "Enable code folding  
