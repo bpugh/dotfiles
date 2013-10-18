@@ -1,0 +1,31 @@
+#ack is a tool like grep, designed for programmers with large trees of heterogeneous source code
+# ~/.ackrc 
+ 
+# Always sort the files
+#--sort-files
+ 
+# Always color, even if piping to a another program
+#--color
+ 
+# Use "less -r" as my pager
+# --pager
+# less -r
+
+#ignore case if pattern contains no upper case
+--smart-case
+
+--type-add=csharp=.cshtml
+--type-set=cshtml=.cshtml
+--type-set=less=.less
+--type-set=jade=.jade
+--type-set=json=.json
+--type-set=yaml=.yaml
+--type-set=coffee=.coffee
+--type-set=mvc=.cs,.cshtml,.js,.coffee,.less
+
+--type-set=DUMB=.js.map,.src,TAGS,
+
+--noDUMB
+
+--ignore-dir=node_modules
+--ignore-dir=dist
