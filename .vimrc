@@ -25,14 +25,19 @@
     "Shortcut for editing  vimrc file in a new tab
     nmap <leader>ev :tabedit $MYVIMRC<cr>
 
+    "fix line endings
+    nnoremap <leader>ed :e ++ff=dos<cr>
+
     "make Y behave like other commands
     nnoremap Y y$
-    "fast paste from yank register
-    nnoremap s "0p
+    "fast paste yank register
+    nnoremap s "0P
 
     "navigate by row
     nnoremap j gj
     nnoremap k gk
+
+    nnoremap <leader>s :Ack '<C-R><C-W>'
 
     "paste default buffer on newline and autoindent
     nnoremap <leader>v o<C-R>"<ESC>
@@ -44,9 +49,11 @@
     " just another reason to love
     nnoremap <C-S-Tab> :tabprevious<CR>
     nnoremap <C-Tab> :tabnext<CR>
+    nnoremap J :tabprevious<CR>
+    nnoremap K :tabnext<CR>
 
     "quick save and quit
-    nnoremap <leader>s :wq<CR>
+    "nnoremap <leader>s :wq<CR>
 
     nnoremap <leader><space> :noh<cr>
     nnoremap <tab> %
@@ -102,6 +109,11 @@
     set expandtab                   " Tabs are spaces, not tabs
     set tabstop=4                   " An indentation every four columns
     set softtabstop=4               " Let backspace delete indent
+
+    "don't treat - as a word separator
+    "especially handy when working html classes and ids
+    set iskeyword+=-
+    " set lisp
     "set matchpairs+=<:>             " Match, to be used with %
     " set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
     "set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
