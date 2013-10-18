@@ -17,9 +17,12 @@
     " home row (either use 'jj' or 'jk')
     inoremap jj <Esc> 
 
+    "paste default buffer on newline and autoindent
+    nnoremap <leader>v o<C-R>"<ESC>
+
     ":command b vsc Build.BuildSolution
     ":command w wq
-    nnoremap / /\v
+	nnoremap / /\v
     vnoremap / /\v
     set ignorecase
     set smartcase
