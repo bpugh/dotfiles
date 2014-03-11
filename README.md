@@ -1,4 +1,4 @@
 vimrc
 =====
 
-The personal vim configuration of Brandon Pugh.
+My Personal configuration files.
