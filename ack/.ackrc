@@ -28,4 +28,5 @@
 --noDUMB
 
 --ignore-dir=node_modules
+--ignore-dir=public
 --ignore-dir=dist
