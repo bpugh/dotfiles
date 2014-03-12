@@ -98,7 +98,8 @@
     set undofile
     set nomodeline                  " disable mode lines (security measure)
 
-    autocmd Filetype gitcommit setlocal spell "turn on spell ckecking for git commit msgs
+    "turn on spell ckecking and wrap lines for git commit msgs
+    autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " Formatting {
 
