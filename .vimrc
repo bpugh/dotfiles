@@ -12,7 +12,7 @@
             source $VIMRUNTIME/mswin.vim
         endif
     " Vundle
-        source ~/vundle.vim
+        source C:/projects/github/dotfiles/vundle.vim
 " }
     syntax enable
 " key mappings {
@@ -77,12 +77,11 @@
 
     map <F2> :NERDTreeToggle<CR>
 
-    " Quickly get out of insert mode without your fingers having to leave the
-    " home row (either use 'jj' or 'jk')
-    inoremap jj <Esc>
 
 " }
 
+    "show line and column number on bottom of screen
+    set ruler
     " Open new split panes to right and bottom, which feels more natural
     set splitbelow
     set splitright
@@ -131,13 +130,32 @@
 
     " Set syntax highlighting for specific file types
     autocmd BufRead,BufNewFile *.md set filetype=markdown
+    autocmd BufRead,BufNewFile *.markdown set filetype=markdown
 
     " Enable spellchecking for Markdown
     autocmd BufRead,BufNewFile *.md setlocal spell
 
     " Automatically wrap at 80 characters for Markdown
     autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+    autocmd BufRead,BufNewFile *.markdown setlocal textwidth=80
 
     " Display extra whitespace
     set list listchars=tab:»·,trail:·
 
+" Writing settings
+    au FileType markdown set tw=80
+    let g:pencil#wrapModeDefault = 'hard'   " or 'soft'
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown call pencil#init()
+  autocmd Filetype gitcommit call pencil#init()
+  autocmd FileType text call pencil#init({'wrap': 'hard'})
+augroup END
+
+let g:litecorrect#typographic = 0
+augroup litecorrect
+    autocmd!
+    autocmd FileType markdown call litecorrect#init()
+    autocmd Filetype gitcommit call litecorrect#init()
+  augroup END

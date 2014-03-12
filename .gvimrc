@@ -12,14 +12,15 @@
     set mouse=a                 " Automatically enable mouse usage
     set mousehide               " Hide the mouse cursor while typing
 
-    colorscheme solarized
+    "colorscheme solarized
+    colorscheme pencil
     set gfn=Consolas:h11:cANSI
 
     set tabpagemax=15               " Only show 15 tabs
     set showmode                    " Display the current mode
 
     syntax enable
-    set background=dark
+    set background=light
 
     " Display extra whitespace
     set list listchars=tab:»·,trail:·

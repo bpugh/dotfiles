@@ -58,6 +58,11 @@ Bundle 'garbas/vim-snipmate'
 Bundle 'tomtom/tlib_vim'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 
+" Writing
+Bundle 'reedes/vim-thematic'
+Bundle 'reedes/vim-pencil'
+Bundle 'reedes/vim-colors-pencil'
+Bundle 'reedes/vim-litecorrect'
 
  filetype plugin indent on     " required!
  "
