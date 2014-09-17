@@ -1,8 +1,6 @@
 
 set-alias subl "C:\Program Files\Sublime Text 2\sublime_text.exe"
 
-set-alias iisex "C:\Program Files (x86)\IIS Express\iisexpress.exe"
-
 
 # Git helpers
 Function st { git st $args }
