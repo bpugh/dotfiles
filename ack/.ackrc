@@ -15,13 +15,14 @@
 --smart-case
 
 --type-add=csharp=.cshtml
+--type-add=js=.jsx
 --type-set=cshtml=.cshtml
 --type-set=less=.less
 --type-set=jade=.jade
 --type-set=json=.json
 --type-set=yaml=.yaml
 --type-set=coffee=.coffee
---type-set=mvc=.cs,.cshtml,.js,.coffee,.less
+--type-set=mvc=.cs,.cshtml,.js,.coffee,.less,.jsx
 
 --type-set=DUMB=.js.map,.src,TAGS,
 
