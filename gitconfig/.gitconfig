@@ -1,42 +1,35 @@
 [user]
-    name = Brandon Pugh
-    email = bp@brandonpugh.com
+	name = Brandon Pugh
+	email = bp@brandonpugh.com
 [alias]
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
-    ; lol = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
+    lol = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
     lr = log --left-right --graph --cherry-pick --oneline HEAD...origin/Release20130814
-    st = status
-    s = status -s
+    st = status -sb
+    stat = status
     sh = stash
+    cp = cherry-pick
     co = checkout
     p = !git fetch && git pull --ff-only
     pf = pull --ff-only
     pr = pull --rebase
     rmo = remote -v
-    ct = commit
-    cta = commit -a
+    cta = commit -A
     br = branch
     rsh = reset --hard
     cl = clean -fdx -e 'local.my.yaml'
     su = submodule update
 
-    #from gf3 github
     ci = commit
-    df = diff
     lg = log -p
-    lol = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
     rsh = reset --hard
     ra = rebase --abort
     rc = rebase --continue
-    pb = publish-branch
-    pp = "!echo 'Pull'; git pull; echo 'Push'; git push"
-    rb = rbranch
-    #rc = rank-contributors
     rv = review
     sm = show-merges
-    standup = log --since 'last friday' --oneline --author 'bpugh@onetechnologies.net'
     stand = !"git log --reverse --branches --since=$(if [[ "Mon" == "$(date +%a)" ]]; then echo "last friday"; else echo "yesterday"; fi) --author=$(git config --get user.email) --format=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d' --date=local"
-    alias = git config --get-regexp alias
+    alias = config --get-regexp alias
+	unstage = reset HEAD
 
 [color]
     branch = auto
@@ -47,12 +40,11 @@
 [core]
     autocrlf = true
     excludesfile = ~/.gitignore_global
-    #editor = "'c:/program files/sublime text 2/sublime_text.exe' -w"
 [credential]
 [diff]
     tool = bc3
 [difftool "bc3"]
-    path = c:/program files (x86)/beyond compare 3/bcomp.exe
+    path = c:/program files (x86)/beyond compare 4/bcomp.exe
 [credential]
     helper = !'C:\\Users\\bpugh\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
 [push]
@@ -60,6 +52,6 @@
 [merge]
     tool = bc3
 [mergetool "bc3"]
-    path = c:/program files (x86)/beyond compare 3/bcomp.exe
+    path = c:/program files (x86)/beyond compare 4/bcomp.exe
 [branch]
 	autosetuprebase = always
