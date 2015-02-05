@@ -14,22 +14,22 @@
     pf = pull --ff-only
     pr = pull --rebase
     rmo = remote -v
-    cta = commit -A
     br = branch
     rsh = reset --hard
-    cl = clean -fdx -e 'local.my.yaml'
+    cl = clean -fdx -e 'node_modules'
     su = submodule update
 
     ci = commit
     lg = log -p
-    rsh = reset --hard
     ra = rebase --abort
     rc = rebase --continue
     rv = review
     sm = show-merges
+    standup = log --since 'last friday' --oneline --author 'brandon.pugh@headspring.com'
     stand = !"git log --reverse --branches --since=$(if [[ "Mon" == "$(date +%a)" ]]; then echo "last friday"; else echo "yesterday"; fi) --author=$(git config --get user.email) --format=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d' --date=local"
     alias = config --get-regexp alias
-	unstage = reset HEAD
+    unstage = reset HEAD
+    mf = merge --no-ff
 
 [color]
     branch = auto
@@ -46,7 +46,7 @@
 [difftool "bc3"]
     path = c:/program files (x86)/beyond compare 4/bcomp.exe
 [credential]
-    helper = !'C:\\Users\\bpugh\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
+	helper = !'C:\\Users\\brandon.pugh\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
 [push]
     default = upstream
 [merge]
