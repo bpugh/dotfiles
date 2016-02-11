@@ -5,6 +5,9 @@
 
     "Saves time; maps the spacebar to colon  
     nmap <space> :
+    "semicolon insertion
+    inoremap <leader>; <C-o>m`<C-o>A;<C-o>``
+    nnoremap ; m`A;<esc>``
 
     nnoremap Y y$
     nnoremap s "0p
