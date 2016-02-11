@@ -3,7 +3,7 @@
 
     let mapleader = ","
 
-    "Saves time; maps the spacebar to colon  
+    "Saves time; maps the spacebar to colon
     nmap <space> :
     "semicolon insertion
     inoremap <leader>; <C-o>m`<C-o>A;<C-o>``
@@ -15,10 +15,6 @@
     "navigate by row
     nnoremap j gj
     nnoremap k gk
-
-    " Quickly get out of insert mode without your fingers having to leave the
-    " home row (either use 'jj' or 'jk')
-    inoremap jj <Esc> 
 
     "paste default buffer on newline and autoindent
     nnoremap <leader>v o<C-R>"<ESC>
