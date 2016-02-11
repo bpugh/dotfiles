@@ -37,7 +37,7 @@
     map <Leader>b :vsc Build.BuildSolution<cr>
     map <Leader>t :vsc Resharper.Resharper_GotoType<cr>
     map <Leader>f :vsc Resharper.Resharper_GotoFile<cr>
-    map <Leader>c :vsc Edit.CommentSelection<cr>
+    map <Leader>c :vsc Resharper.Resharper_LineComment<cr>
     map <Leader>u :vsc Edit.UncommentSelection<cr>
     map <Leader>r :vsc ReSharper.ReSharper_ReSharper_UnitTest_RunContext<cr>
     nnoremap <tab> %
