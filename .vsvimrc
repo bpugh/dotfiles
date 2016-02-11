@@ -35,6 +35,7 @@
     set hlsearch
     nnoremap <Leader><space> :noh<cr>
     map <Leader>b :vsc Build.BuildSolution<cr>
+    map <Leader>p :vsc Debug.ToggleBreakpoint<cr>
     map <Leader>t :vsc Resharper.Resharper_GotoType<cr>
     map <Leader>f :vsc Resharper.Resharper_GotoFile<cr>
     map <Leader>c :vsc Resharper.Resharper_LineComment<cr>
