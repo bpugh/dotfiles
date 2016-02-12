@@ -40,13 +40,12 @@
 [core]
     autocrlf = true
     excludesfile = ~/.gitignore_global
-[credential]
 [diff]
     tool = bc3
 [difftool "bc3"]
     path = c:/program files (x86)/beyond compare 4/bcomp.exe
 [credential]
-	helper = !'C:\\Users\\brandon.pugh\\AppData\\Roaming\\GitCredStore\\git-credential-winstore.exe'
+    helper = manager
 [push]
     default = upstream
 [merge]
