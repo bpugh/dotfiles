@@ -1,11 +1,12 @@
-set-alias subl "C:\Users\brandon.pugh\apps\Sublime Text 3\sublime_text.exe"
-
 # Git helpers
 Function st { git st $args }
 Function stand { git stand $args }
 Function ci { git ci $args }
+Function cia { git ci --amend $args }
 Function lol { git lol $args }
 Function rsh { git reset --hard $args }
+Function ri { git rebase -i $args }
+Function sd { npm run start:devserver }
 Function gconf { subl C:\Users\brandon.pugh\.gitconfig }
 Function gitemail { git config user.email "bp@brandonpugh.com" }
 
