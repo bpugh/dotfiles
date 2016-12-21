@@ -7,7 +7,7 @@ Function lol { git lol $args }
 Function rsh { git reset --hard $args }
 Function ri { git rebase -i $args }
 Function sd { npm run start:devserver }
-Function gconf { subl C:\Users\brandon.pugh\.gitconfig }
+Function gconf { code C:\Users\brandon.pugh\.gitconfig }
 Function gitemail { git config user.email "bp@brandonpugh.com" }
 
 # refresh env vars without restarting process
