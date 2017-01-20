@@ -9,6 +9,7 @@
     sh = stash
     cp = cherry-pick
     co = checkout
+    cm = checkout master
     pf = pull --ff-only
     pr = pull --rebase
     rmo = remote -v
@@ -16,6 +17,9 @@
     rsh = reset --hard
     cl = clean -fdx -e 'node_modules'
     su = submodule update
+
+    tf = tfs fetch
+    tp = tfs pull --rebase
 
     ci = commit
     lg = log -p
