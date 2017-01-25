@@ -37,6 +37,8 @@
     map <Leader>c :vsc Resharper.Resharper_LineComment<cr>
     map <Leader>u :vsc Edit.UncommentSelection<cr>
     map <Leader>r :vsc ReSharper.ReSharper_UnitTestRunContext<cr>
+    nnoremap t :vsc Resharper_HumpNext<cr>
+    nnoremap T :vsc Resharper_HumpPrev<cr>
     nnoremap <tab> %
     vnoremap <tab> %
 
