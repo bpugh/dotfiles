@@ -6,6 +6,7 @@ Function cia { git ci --amend $args }
 Function lol { git lol $args }
 Function rsh { git reset --hard $args }
 Function ri { git rebase -i $args }
+Function lz { node C:\projects\lazyspec\src\cli.js $args }
 Function sd { npm run start:devserver }
 Function nr { npm run $args }
 Function gconf { code C:\Users\brandon.pugh\.gitconfig }
