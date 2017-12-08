@@ -7,6 +7,7 @@ Function lol { git lol $args }
 Function rsh { git reset --hard $args }
 Function ri { git rebase -i $args }
 Function sd { npm run start:devserver }
+Function nr { npm run $args }
 Function gconf { code C:\Users\brandon.pugh\.gitconfig }
 Function gitemail { git config user.email "bp@brandonpugh.com" }
 
