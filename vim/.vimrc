@@ -12,7 +12,7 @@
             source $VIMRUNTIME/mswin.vim
         endif
     " Vundle
-        source C:/projects/github/dotfiles/vundle.vim
+        " source C:/projects/dotfiles/vim/vundle.vim
 " }
     syntax enable
 " key mappings {
