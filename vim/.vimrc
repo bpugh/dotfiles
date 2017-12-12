@@ -101,6 +101,12 @@
     "turn on spell ckecking and wrap lines for git commit msgs
     autocmd Filetype gitcommit setlocal spell textwidth=72
 
+    " for enabling block cursor in conemu
+    let &t_ti.="\e[1 q"
+    let &t_SI.="\e[5 q"
+    let &t_EI.="\e[1 q"
+    let &t_te.="\e[0 q"
+
 " Formatting {
 
     " set nowrap                      " Wrap long lines
