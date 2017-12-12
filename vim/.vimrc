@@ -145,6 +145,3 @@
     " Automatically wrap at 80 characters for Markdown
     autocmd BufRead,BufNewFile *.md setlocal textwidth=80
     autocmd BufRead,BufNewFile *.markdown setlocal textwidth=80
-
-    " Display extra whitespace
-    set list listchars=tab:»·,trail:·
