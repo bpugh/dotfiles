@@ -148,21 +148,3 @@
 
     " Display extra whitespace
     set list listchars=tab:»·,trail:·
-
-" Writing settings
-    au FileType markdown set tw=80
-    let g:pencil#wrapModeDefault = 'hard'   " or 'soft'
-
-augroup pencil
-  autocmd!
-  autocmd FileType markdown call pencil#init()
-  autocmd Filetype gitcommit call pencil#init()
-  autocmd FileType text call pencil#init({'wrap': 'hard'})
-augroup END
-
-let g:litecorrect#typographic = 0
-augroup litecorrect
-    autocmd!
-    autocmd FileType markdown call litecorrect#init()
-    autocmd Filetype gitcommit call litecorrect#init()
-  augroup END
