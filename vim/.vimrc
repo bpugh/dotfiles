@@ -130,9 +130,9 @@
 " }
 
     " Backups files
-    set backupdir=~/.vim/tmp/backup// " backups
-    set directory=~/.vim/tmp/swap// " swap files
-    set undodir=~/.vim/tmp/undo//
+    set backupdir=~/.vim/backup// " backups
+    set directory=~/.vim/swap// " swap files
+    set undodir=~/.vim/undo//
     set backup " enable backup
 
     " Set syntax highlighting for specific file types
