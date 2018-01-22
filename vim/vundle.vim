@@ -1,4 +1,5 @@
 " another test
+" fixup
 set nocompatible               " be iMproved
 filetype off                   " required!
 
