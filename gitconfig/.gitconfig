@@ -1,19 +1,19 @@
-[user]
-	name = Brandon Pugh
-	email = bp@brandonpugh.com
 [alias]
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
     lol = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white)— %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
     st = status -sb
     stat = status
     sh = stash
+    sha = stash apply
     cp = cherry-pick
     co = checkout
     cm = checkout master
+    cmr = !git checkout master && git pr
     pf = pull --ff-only
-    pr = pull --rebase
+    pr = pull --rebase --prune
     rmo = remote -v
     br = branch
+    brr = branch --remote
     rsh = reset --hard
     cl = clean -fdx -e 'node_modules'
     su = submodule update
@@ -22,18 +22,26 @@
     tp = tfs pull --rebase
 
     ci = commit
+    cia = commit --amend
+    cin = commit --no-verify
     lg = log -p
     ra = rebase --abort
     rc = rebase --continue
     ri = rebase -i
-    sm = show-merges
     standup = log --since 'last friday' --oneline --author 'brandon.pugh@headspring.com'
     stand = "!git log --reverse --branches --since=$(if [[ Mon == $(date +%a) ]]; then echo last friday; else echo yesterday; fi) --author=$(git config --get user.email) --format=format:'%C(cyan) %ad %C(yellow)%h %Creset %s %Cgreen%d' --date=local"
     alias = config --get-regexp alias
     unstage = reset HEAD
     mf = merge --no-ff
 	please = push --force-with-lease
-    rbm = rebase master
+    # rbm = rebase master
+    wip = commit --no-verify -am "WIP"
+    wipe = !git add -u && git commit --no-verify -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+    # rbm = !git co master && git pr && git co - && git pr && git rebase master
+    rbm = !git co master && git pr && git co - && git rebase master
+    rem = rebase master
+    undo = reset HEAD~1 --mixed
+    be = rev-list --left-right --count origin/master...@
 
 [color]
     branch = auto
@@ -62,3 +70,5 @@
 	autoDetach = false
 [pull]
 	rebase = true
+[rerere]
+	enabled = true
