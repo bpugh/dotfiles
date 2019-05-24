@@ -12,6 +12,14 @@ Function sd { npm run start:devserver }
 Function nr { npm run $args }
 Function sncu { ncu "/^$args[1]-.*$/" $args[2] }
 Function gconf { code ~\.gitconfig }
+Function c { code --disable-gpu }
+Function db { git exec ./build.cmd updatedb }
+Function dr {
+    cd ..
+    dotnet watch run
+}
+
+Function getProjectRootPath {git rev-parse --show-toplevel}
 Function gitemail { git config user.email "bp@brandonpugh.com" }
 function dam {
     git branch --merged |
