@@ -41,7 +41,8 @@
         map <Leader>f :vsc Resharper.Resharper_GotoFile<cr>
         map <Leader>c :vsc Resharper.Resharper_LineComment<cr>
         map <Leader>u :vsc Edit.UncommentSelection<cr>
-        map <Leader>r :vsc ReSharper.ReSharper_UnitTestRunContext<cr>
+        " map <Leader>r :vsc ReSharper.ReSharper_UnitTestRunContext<cr>
+        map <Leader>r :vsc TestExplorer.RepeatLastRun<cr>
 
         nnoremap t :vsc Resharper_HumpNext<cr>
         nnoremap T :vsc Resharper_HumpPrev<cr>

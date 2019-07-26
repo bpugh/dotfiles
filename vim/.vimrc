@@ -115,6 +115,7 @@
     set expandtab                   " Tabs are spaces, not tabs
     set tabstop=2                   " An indentation every four columns
     set softtabstop=2               " Let backspace delete indent
+    iabbrev cpa Cherry pick PR #123 for iEF-
 
     "don't treat - as a word separator
     "especially handy when working html classes and ids
