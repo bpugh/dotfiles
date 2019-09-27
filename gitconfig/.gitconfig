@@ -42,8 +42,9 @@
 	undo = reset HEAD~1 --mixed
 	be = rev-list --left-right --count origin/master...@
 	fr = !git fetch && git rebase origin/master
-	db = "!git fetch -p && for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
+	db = "!for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
 	exec = "!exec "
+	rb = !git fetch && git rebase origin/master
 [color]
 	branch = auto
 	diff = auto
