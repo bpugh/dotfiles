@@ -49,8 +49,6 @@
     " just another reason to love
     nnoremap <C-S-Tab> :tabprevious<CR>
     nnoremap <C-Tab> :tabnext<CR>
-    nnoremap J :tabprevious<CR>
-    nnoremap K :tabnext<CR>
 
     "quick save and quit
     "nnoremap <leader>s :wq<CR>
