@@ -13,7 +13,7 @@ Function lz { node C:\projects\lazyspec\src\cli.js $args }
 Function sd { npm run start:devserver }
 Function nr { npm run $args }
 Function sncu { ncu "/^$args[1]-.*$/" $args[2] }
-Function gconf { code ~\.gitconfig }
+Function gconf { code ~/.gitconfig }
 Function c { code --disable-gpu }
 Function yd { youtube-dl $args }
 Function dr {
@@ -21,14 +21,14 @@ Function dr {
     dotnet watch run
 }
 
-Function getProjectRootPath {git rev-parse --show-toplevel}
+Function getProjectRootPath { git rev-parse --show-toplevel }
 Function gitemail { git config user.email "bp@brandonpugh.com" }
 function dam {
     git branch --merged |
-        ForEach-Object { $_.Trim() } |
-        Where-Object {$_ -NotMatch "^\*"} |
-        Where-Object {-not ( $_ -Like "*master" )} |
-        ForEach-Object { git branch -d $_ }
+    ForEach-Object { $_.Trim() } |
+    Where-Object { $_ -NotMatch "^\*" } |
+    Where-Object { -not ( $_ -Like "*master" ) } |
+    ForEach-Object { git branch -d $_ }
 }
 
 # refresh env vars without restarting process
