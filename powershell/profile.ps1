@@ -1,3 +1,5 @@
+Set-Theme Paradox
+
 # Git helpers
 Function st { git st $args }
 Function stand { git stand $args }
@@ -13,7 +15,7 @@ Function nr { npm run $args }
 Function sncu { ncu "/^$args[1]-.*$/" $args[2] }
 Function gconf { code ~\.gitconfig }
 Function c { code --disable-gpu }
-Function db { git exec ./build.cmd updatedb }
+Function yd { youtube-dl $args }
 Function dr {
     cd ..
     dotnet watch run
