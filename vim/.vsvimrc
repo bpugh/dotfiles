@@ -23,6 +23,11 @@
     nnoremap j gj
     nnoremap k gk
 
+    nnoremap H ^
+    nnoremap L $
+
+    nnoremap Q @@ "Instead of stumbling into ex mode, repeat the last macro used.
+
     "paste default buffer on newline and autoindent
     nnoremap <leader>v o<C-R>"<ESC>
 
@@ -35,13 +40,17 @@
     vnoremap <tab> %
 
     " Visual Studio specific commands {
+        map <Leader>w :vsc Edit.SubwordNext<cr>
+        map <Leader>e :vsc Edit.SubwordNextExtend<cr>
         map <Leader>b :vsc Build.BuildSolution<cr>
         map <Leader>p :vsc Debug.ToggleBreakpoint<cr>
         map <Leader>t :vsc Resharper.Resharper_GotoType<cr>
         map <Leader>f :vsc Resharper.Resharper_GotoFile<cr>
-        map <Leader>c :vsc Resharper.Resharper_LineComment<cr>
+        " map <Leader>c :vsc Resharper.Resharper_LineComment<cr>
+        map <Leader>c :vsc Edit.CommentSelection<cr>
         map <Leader>u :vsc Edit.UncommentSelection<cr>
-        map <Leader>r :vsc ReSharper.ReSharper_UnitTestRunContext<cr>
+        map <Leader>r :vsc TestExplorer.RepeatLastRun<cr>
+        " map <Leader>r :vsc ReSharper.ReSharper_UnitTestRunContext<cr>
 
         nnoremap t :vsc Resharper_HumpNext<cr>
         nnoremap T :vsc Resharper_HumpPrev<cr>
@@ -52,6 +61,7 @@
 
 " }
 
+    set relativenumber
     set shiftwidth=4                " Use indents of 4 spaces
     set expandtab                   " Tabs are spaces, not tabs
     set tabstop=4                   " An indentation every four columns
