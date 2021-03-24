@@ -20,6 +20,11 @@ Function dr {
     dotnet watch run
 }
 
+function Edit-ProfileFile{
+    code 'C:\projects\dotfiles\powershell\profile.ps1'
+ }
+ Set-Alias epf Edit-ProfileFile
+
 Function getProjectRootPath { git rev-parse --show-toplevel }
 Function gitemail { git config user.email "bp@brandonpugh.com" }
 function dam {
