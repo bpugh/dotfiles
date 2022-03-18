@@ -9,7 +9,6 @@ Function lol { git lol $args }
 Function rsh { git reset --hard $args }
 Function p { git pr $args }
 Function ri { git rebase -i $args }
-Function lz { node C:\projects\lazyspec\src\cli.js $args }
 Function sd { npm run start:devserver }
 Function nr { npm run $args }
 Function sncu { ncu "/^$args[1]-.*$/" $args[2] }
