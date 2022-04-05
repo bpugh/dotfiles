@@ -1,4 +1,4 @@
-Set-Theme Paradox
+# Set-Theme Paradox
 
 # Git helpers
 Function st { git st $args }
@@ -11,6 +11,7 @@ Function p { git pr $args }
 Function ri { git rebase -i $args }
 Function sd { npm run start:devserver }
 Function nr { npm run $args }
+Function dn { dotnet watch $args }
 Function sncu { ncu "/^$args[1]-.*$/" $args[2] }
 Function gconf { code ~/.gitconfig }
 Function c { code --disable-gpu }
