@@ -46,6 +46,12 @@
 	exec = "!exec "
 	rb = !git fetch && git rebase origin/main
 	set-upstream = !git push --set-upstream origin `git symbolic-ref --short HEAD`
+	pain = !git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10
+	cif = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup
+	cof = !git branch -r | fzf | cut -c 10- | xargs -o git co
+	cis = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --squash
+	reword = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o -I{} git commit --fixup=reword:{}
+	marker = commit --allow-empty -m "============="
 [color]
 	branch = auto
 	diff = auto
@@ -54,20 +60,19 @@
 [core]
 	autocrlf = true
 	excludesfile = ~/.gitignore_global
-	# editor = code --wait
 [diff]
 	tool = bc3
 	guitool = beyondcompare3
 [difftool "bc3"]
 	path = c:/program files/beyond compare 4/bcomp.exe
-[credential]
-	helper = manager
 [push]
 	default = upstream
 [merge]
 	tool = bc3
+	guitool = bc3
 [mergetool "bc3"]
 	path = c:/program files (x86)/beyond compare 4/bcomp.exe
+	cmd = \"\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 [branch]
 	autosetuprebase = always
 [gc]
@@ -81,5 +86,11 @@
 [fetch]
 	prune = false
 [rebase]
-	autoStash = false
+	autoStash = true
 	autosquash = true
+[commit]
+	verbose = true
+[svn]
+	rmdir = true
+[init]
+	defaultBranch = main
