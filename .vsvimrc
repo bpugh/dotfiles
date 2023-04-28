@@ -13,8 +13,8 @@
     "Saves time; maps the spacebar to colon
     nmap <space> :
     "semicolon insertion
-    inoremap <leader>; <C-o>m`<C-o>A;<C-o>``
-    nnoremap ; m`A;<esc>``
+    " inoremap <leader>; <C-o>m`<C-o>A;<C-o>``
+    " nnoremap ; m`A;<esc>``
 
     nnoremap Y y$
     nnoremap s "0p
@@ -29,7 +29,8 @@
     nnoremap Q @@ "Instead of stumbling into ex mode, repeat the last macro used.
 
     "paste default buffer on newline and autoindent
-    nnoremap <leader>v o<C-R>"<ESC>
+    " nnoremap <leader>v o<C-R>"<ESC>
+    nnoremap <leader>v "0p<ESC>
 
     nnoremap / /\v
     vnoremap / /\v
@@ -46,14 +47,20 @@
         map <Leader>p :vsc Debug.ToggleBreakpoint<cr>
         map <Leader>t :vsc Resharper.Resharper_GotoType<cr>
         map <Leader>f :vsc Resharper.Resharper_GotoFile<cr>
-        " map <Leader>c :vsc Resharper.Resharper_LineComment<cr>
-        map <Leader>c :vsc Edit.CommentSelection<cr>
-        map <Leader>u :vsc Edit.UncommentSelection<cr>
+        map <Leader>d :vsc Resharper.Resharper_ReformatCode<cr>
+        " map <Leader>d :vsc Edit.FormatDocument<cr>
+        map <Leader>s :vsc Edit.FormatSelection<cr>
+        map <Leader>c :vsc Resharper.Resharper_LineComment<cr>
+        map z. :vsc View.QuickActions<cr>
+        " map <Leader>c :vsc Edit.CommentSelection<cr>
+        " map <Leader>u :vsc Edit.UncommentSelection<cr>
         map <Leader>r :vsc TestExplorer.RepeatLastRun<cr>
         " map <Leader>r :vsc ReSharper.ReSharper_UnitTestRunContext<cr>
 
         nnoremap t :vsc Resharper_HumpNext<cr>
         nnoremap T :vsc Resharper_HumpPrev<cr>
+        vnoremap t :vsc Resharper_HumpNext<cr>
+        vnoremap T :vsc Resharper_HumpPrev<cr>
 
         nmap <C-O> :vsc View.NavigateBackward<CR>
         nmap <C-I> :vsc View.NavigateForward<CR>
