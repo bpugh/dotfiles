@@ -1,5 +1,6 @@
 [alias]
-	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
+	l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
+	la = log --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
 	lol = log --graph --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(bold white) - %an%C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
 	lf = log --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(bold white) - %an%C(reset)' --abbrev-commit --date=relative
 	rprettier = rebase --strategy-option=theirs --exec 'npx prettier --write `git show --name-only --pretty="" HEAD` && git add `git show --name-only --pretty="" HEAD` && git commit --amend --no-edit' main
@@ -10,7 +11,7 @@
 	cp = cherry-pick
 	cpf = cherry-pick -m 1
 	co = checkout
-	cm = checkout main
+	cm = "!git co main 2> /dev/null || git co master 2> /dev/null || git co development"
 	cmr = !git checkout main && git pr
 	pf = pull --ff-only
 	pr = pull --rebase --prune
@@ -34,11 +35,11 @@
 	alias = config --get-regexp alias
 	unstage = reset HEAD
 	mf = merge --no-ff
-	please = push --force-with-lease
+	please = push --force-with-lease --force-if-includes
 	wip = commit --no-verify -am "WIP"
 	wipe = !git add -u && git commit --no-verify -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-	rbm = !git co main && git pr && git co - && git rebase main
-	rem = rebase main
+	rem = !git fetch && git rebase origin/main
+	red = !git fetch && git rebase origin/development
 	undo = reset HEAD~1 --mixed
 	be = rev-list --left-right --count origin/main...@
 	fr = !git fetch && git rebase origin/main
@@ -51,7 +52,13 @@
 	cof = !git branch -r | fzf | cut -c 10- | xargs -o git co
 	cis = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --squash
 	reword = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o -I{} git commit --fixup=reword:{}
-	marker = commit --allow-empty -m "============="
+	marker = commit --allow-empty -m '=============START OF BRANCH============='
+	rcc = -c core.editor=true rebase --continue
+	open = "!f() { REPO_URL=$(git config remote.origin.url); start ${REPO_URL%%.git}; }; f"
+	prdesc = !git log origin/development..HEAD --reverse --format=format:'*%s*%n%b' | sed 's/Related[- ]work[- ]items.*//'
+	default = !git remote show origin | sed -n '/HEAD branch/s/.*: //p'
+	migrate = !git rebase --onto development
+	mw = "!f() { git log --merges --ancestry-path --oneline $1..origin | tail; }; f"
 [color]
 	branch = auto
 	diff = auto
@@ -60,6 +67,8 @@
 [core]
 	autocrlf = true
 	excludesfile = ~/.gitignore_global
+    editor = nvim
+	pager = "delta --dark"
 [diff]
 	tool = bc3
 	guitool = beyondcompare3
@@ -67,9 +76,11 @@
 	path = c:/program files/beyond compare 4/bcomp.exe
 [push]
 	default = upstream
+	autoSetupRemote = true
 [merge]
 	tool = bc3
 	guitool = bc3
+	conflictStyle = zdiff3
 [mergetool "bc3"]
 	path = c:/program files (x86)/beyond compare 4/bcomp.exe
 	cmd = \"\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
@@ -84,10 +95,11 @@
 [rerere]
 	enabled = true
 [fetch]
-	prune = false
+	prune = true
 [rebase]
 	autoStash = true
 	autosquash = true
+	updateRefs = true
 [commit]
 	verbose = true
 [svn]
