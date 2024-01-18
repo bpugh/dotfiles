@@ -19,7 +19,7 @@
 	br = branch
 	brr = branch --remote
 	rsh = reset --hard
-	cl = clean -fdx -e 'node_modules'
+	cl = clean -idx -e 'node_modules'
 	su = submodule update
 	tf = tfs fetch
 	tp = tfs pull --rebase
