@@ -95,6 +95,7 @@
     set showmatch
     set hlsearch
     set relativenumber
+    set number
     set undofile
     set nomodeline                  " disable mode lines (security measure)
 
