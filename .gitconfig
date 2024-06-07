@@ -77,6 +77,7 @@
 [push]
 	default = upstream
 	autoSetupRemote = true
+	useForceIfIncludes = true
 [merge]
 	tool = bc3
 	guitool = bc3
