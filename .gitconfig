@@ -14,9 +14,8 @@
 	cpf = cherry-pick -m 1
 	co = checkout
 	cm = "!git co main 2> /dev/null || git co master 2> /dev/null || git co development"
-	cmr = !git checkout main && git pr
-	pf = pull --ff-only
-	pr = pull --rebase --prune
+	p = pull
+	f = fetch
 	rmo = remote -v
 	br = branch
 	brr = branch --remote
@@ -46,10 +45,8 @@
 	red = !git fetch && git rebase origin/development
 	undo = reset HEAD~1 --mixed
 	be = rev-list --left-right --count origin/main...@
-	fr = !git fetch && git rebase origin/main
 	db = "!for branch in `git branch -vv | grep ': gone]' | awk '{print $1}'`; do git branch -D $branch; done"
 	exec = "!exec "
-	rb = !git fetch && git rebase origin/main
 	set-upstream = !git push --set-upstream origin `git symbolic-ref --short HEAD`
 	pain = !git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10
 	cif = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup
