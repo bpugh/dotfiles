@@ -107,6 +107,7 @@
 	autoStash = true
 	autosquash = true
 	updateRefs = true
+	abbreviateCommands = true
 [commit]
 	verbose = true
 [svn]
