@@ -53,7 +53,7 @@
 	set-upstream = !git push --set-upstream origin `git symbolic-ref --short HEAD`
 	pain = !git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10
 	cif = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --fixup
-	cof = !git branch -r | fzf | cut -c 10- | xargs -o git co
+	cof = !git branch | fzf | xargs -o git co
 	cis = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --squash
 	reword = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o -I{} git commit --fixup=reword:{}
 	marker = commit --no-verify --allow-empty -m '=============START OF BRANCH============='
