@@ -8,6 +8,8 @@
 	stat = status
 	sh = stash
 	sha = stash apply
+	shm = stash push -m
+	sm = "!_() { git stash || exit 1; rev=$(git rev-parse stash@{0}) && git stash drop stash@{0} || exit 1 ; git stash store -m \"$1\" $rev; }; _"
 	cp = cherry-pick
 	cpf = cherry-pick -m 1
 	co = checkout
@@ -19,6 +21,7 @@
 	br = branch
 	brr = branch --remote
 	rsh = reset --hard
+	rsk = reset --keep
 	cl = clean -idx -e 'node_modules'
 	su = submodule update
 	tf = tfs fetch
@@ -35,6 +38,7 @@
 	alias = config --get-regexp alias
 	unstage = reset HEAD
 	mf = merge --no-ff
+	ma = merge --abort
 	please = push --force-with-lease --force-if-includes
 	wip = commit --no-verify -am "WIP"
 	wipe = !git add -u && git commit --no-verify -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
@@ -52,13 +56,18 @@
 	cof = !git branch -r | fzf | cut -c 10- | xargs -o git co
 	cis = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o git commit --squash
 	reword = !git log -n 50 --pretty=format:'%h %s' --no-merges | fzf | cut -c -7 | xargs -o -I{} git commit --fixup=reword:{}
-	marker = commit --allow-empty -m '=============START OF BRANCH============='
+	marker = commit --no-verify --allow-empty -m '=============START OF BRANCH============='
+	rim = rebase -i 'HEAD^{/=====}^'
 	rcc = -c core.editor=true rebase --continue
 	open = "!f() { REPO_URL=$(git config remote.origin.url); start ${REPO_URL%%.git}; }; f"
 	prdesc = !git log origin/development..HEAD --reverse --format=format:'*%s*%n%b' | sed 's/Related[- ]work[- ]items.*//'
 	default = !git remote show origin | sed -n '/HEAD branch/s/.*: //p'
 	migrate = !git rebase --onto development
 	mw = "!f() { git log --merges --ancestry-path --oneline $1..origin | tail; }; f"
+	dad = !curl https://icanhazdadjoke.com/ && echo
+	reso = reset --keep @{u}
+	abb = !git absorb --base main --force
+
 [color]
 	branch = auto
 	diff = auto
