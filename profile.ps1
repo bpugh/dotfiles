@@ -7,7 +7,7 @@ Function ci { git ci $args }
 Function cia { git ci --amend $args }
 Function lol { git lol $args }
 Function rsh { git reset --hard $args }
-Function p { git pr $args }
+Function p { git p $args }
 Function ri { git rebase -i $args }
 Function sd { npm run start:devserver }
 Function nr { npm run $args }
@@ -16,10 +16,13 @@ Function sncu { ncu "/^$args[1]-.*$/" $args[2] }
 Function gconf { code ~/.gitconfig }
 Function c { code --disable-gpu }
 Function yd { youtube-dl $args }
+Function fsa {Invoke-FuzzyGitStatus | % { git add $_ }}
 Function dr {
     cd ..
     dotnet watch run
 }
+Function path { $env:path -split ";" }
+Set-PsFzfOption -PSReadlineChordProvider 'alt+f' -PSReadlineChordReverseHistory 'Ctrl+r' -TabExpansion -EnableAliasFuzzyEdit -EnableAliasFuzzyGitStatus -EnableAliasFuzzyZLocation
 
 function Edit-ProfileFile{
     code 'C:\projects\dotfiles\powershell\profile.ps1'
