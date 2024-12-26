@@ -75,6 +75,10 @@
 	excludesfile = ~/.gitignore_global
     editor = nvim
 	pager = "delta --dark"
+	# editor = code --wait
+[delta]
+   hyperlinks = true
+   hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 [diff]
 	tool = bc3
 	guitool = beyondcompare3
