@@ -13,7 +13,7 @@ Function sd { npm run start:devserver }
 Function nr { npm run $args }
 Function dn { dotnet watch $args }
 Function sncu { ncu "/^$args[1]-.*$/" $args[2] }
-Function gconf { code ~/.gitconfig }
+Function gconf { code $env:USERPROFILE\.gitconfig }
 Function c { code --disable-gpu }
 Function yd { youtube-dl $args }
 Function fsa {Invoke-FuzzyGitStatus | % { git add $_ }}

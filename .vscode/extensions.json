@@ -6,7 +6,6 @@
     // Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
     "ms-vscode.PowerShell",
     "EditorConfig.EditorConfig",
-    "mdickin.markdown-shortcuts",
-    "andischerer.theme-atom-one-dark"
+    "mdickin.markdown-shortcuts"
   ]
 }
