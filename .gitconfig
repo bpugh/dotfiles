@@ -38,6 +38,8 @@
 	unstage = reset HEAD
 	mf = merge --no-ff
 	ma = merge --abort
+	mb = "!git merge-base HEAD origin/main 2> /dev/null || git merge-base HEAD origin/master 2> /dev/null || git merge-base HEAD origin/development"
+	rmb = "!git reset $(git mb)"
 	please = push --force-with-lease --force-if-includes
 	wip = commit --no-verify -am "WIP"
 	wipe = !git add -u && git commit --no-verify -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
@@ -64,6 +66,7 @@
 	dad = !curl https://icanhazdadjoke.com/ && echo
 	reso = reset --keep @{u}
 	abb = !git absorb --base main --force
+	base = "!git merge-base HEAD origin/development"
 
 [color]
 	branch = auto
@@ -73,8 +76,8 @@
 [core]
 	autocrlf = true
 	excludesfile = ~/.gitignore_global
-    editor = nvim
-	pager = "delta --dark"
+    # editor = nvim
+	# pager = "delta --dark"
 	# editor = code --wait
 [delta]
    hyperlinks = true
@@ -118,3 +121,8 @@
 	rmdir = true
 [init]
 	defaultBranch = main
+[user]
+	name = Brandon Pugh
+	email = brandon.pugh@epay3.com
+[includeIf "hasconfig:remote.*.url:https://github.com/**"]
+	path = ~/.gitconfig-personal
