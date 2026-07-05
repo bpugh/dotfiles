@@ -59,6 +59,8 @@
         " map <Leader>u :vsc Edit.UncommentSelection<cr>
         map <Leader>r :vsc TestExplorer.RepeatLastRun<cr>
         map <Leader>d :vsc TestExplorer.DebugLastRun<cr>
+        nnoremap <leader>R :vsc TestExplorer.RunAllTestsInContext<cr>
+        nnoremap <leader>D :vsc TestExplorer.DebugAllTestsInContext<cr>
         " map <Leader>r :vsc ReSharper.ReSharper_UnitTestRunContext<cr>
 
         nnoremap t :vsc Edit.SubwordNext<cr>
@@ -73,6 +75,23 @@
         map ] :vsc Edit.NextMethod<CR>
         map [ :vsc Edit.PreviousMethod<CR>
         map zl :so ~/.vsvimrc<CR>
+        map gd :vsc Edit.GoToImplementation<CR>
+        map gr :vsc Edit.FindAllReferences<CR>
+        map gp :vsc Edit.PeekDefinition<CR>
+
+        " break out of the tyranny of text! Navigate by method
+        nnoremap <leader>m :vsc Edit.NextMethod<cr>
+        nnoremap <leader>M :vsc Edit.PreviousMethod<cr>
+
+        nnoremap R :vsc Refactor.Rename<cr>
+
+        " jump between compilation errors
+        nnoremap <leader>e :vsc View.NextError<cr>
+        nnoremap <leader>E :vsc View.PreviousError<cr>
+
+        " testing and debugging
+        nnoremap <leader>b :vsc Debug.ToggleBreakpoint<cr>
+
     " }
 
 " }

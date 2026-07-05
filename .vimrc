@@ -7,10 +7,10 @@
     " Windows Compatible {
         " On Windows, also use '.vim' instead of 'vimfiles'; this makes synchronization
         " across (heterogeneous) systems easier.
-        if has('win32') || has('win64')
-            set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
-            source $VIMRUNTIME/mswin.vim
-        endif
+        " if has('win32') || has('win64')
+        "     set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
+        "     source $VIMRUNTIME/mswin.vim
+        " endif
     " Vundle
         " source C:/projects/dotfiles/vim/vundle.vim
 " }
