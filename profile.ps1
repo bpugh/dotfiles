@@ -1,5 +1,3 @@
-# Set-Theme Paradox
-
 # Git helpers
 Function st { git st $args }
 Function stand { git stand $args }
@@ -17,12 +15,13 @@ Function gconf { code $env:USERPROFILE\.gitconfig }
 Function c { code --disable-gpu }
 Function yd { youtube-dl $args }
 Function fsa {Invoke-FuzzyGitStatus | % { git add $_ }}
+Function ip { curl ifconfig.me }
 Function dr {
     cd ..
     dotnet watch run
 }
 Function path { $env:path -split ";" }
-Set-PsFzfOption -PSReadlineChordProvider 'alt+f' -PSReadlineChordReverseHistory 'Ctrl+r' -TabExpansion -EnableAliasFuzzyEdit -EnableAliasFuzzyGitStatus -EnableAliasFuzzyZLocation
+# Set-PsFzfOption -PSReadlineChordProvider 'alt+f' -PSReadlineChordReverseHistory 'Ctrl+r' -TabExpansion -EnableAliasFuzzyEdit -EnableAliasFuzzyGitStatus -EnableAliasFuzzyZLocation
 
 function Edit-ProfileFile{
     code 'C:\projects\dotfiles\powershell\profile.ps1'
@@ -51,17 +50,6 @@ function rvars {
             $_
         } | Set-Content -Path { "Env:$($_.Name)" }
     }
-}
-
-function bjl {
-    Write-Host "backing up jump-location file"
-    cp ~\jump-location.txt ~\jump-location.bak.txt
-}
-
-function fixjl {
-    Write-Host "fixing jump-location file"
-    cp ~\jump-location.bak.txt ~\jump-location.txt
-    rm ~\jump-location.txt.tmp
 }
 
 #For deleting dir/files with really long paths
